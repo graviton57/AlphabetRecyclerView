@@ -19,10 +19,8 @@ allprojects {
 ```
 app build.gradle
 ```groovy
-dependencies {
-   	dependencies {
-   		compile 'com.github.graviton57:AlphabetRecyclerView:1.0'
-   	}
+  dependencies {
+    	compile 'com.github.graviton57:AlphabetRecyclerView:1.0'
 }
 ```
 
