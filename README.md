@@ -1,5 +1,7 @@
 # AlphabetRecyclerView
 AlphabetRecyclerView is an Android library created to be able to use RecyclerView.Adapter with a header in a easy way.
+
+[![](https://jitpack.io/v/graviton57/AlphabetRecyclerView.svg)](https://jitpack.io/#graviton57/AlphabetRecyclerView)
 ## Effect
 ![](art/demo.gif)
 
