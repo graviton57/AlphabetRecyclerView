@@ -1,21 +1,8 @@
 apply plugin: 'com.android.library'
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'alphabet-recyclerview'// Has to be same as your library module name
-    publishedGroupId = 'com.github.graviton57'
-    libraryName = 'AlphabetRecyclerView'
-    artifact = 'alphabet-recyclerview' // Has to be same as your library module name
-    libraryDescription = 'Alphabetical Sticky Headers RecyclerView.'
-    siteUrl = 'https://github.com/graviton57/AlphabetRecyclerView'
-    gitUrl = 'https://github.com/graviton57/AlphabetRecyclerView.git'
-    libraryVersion = '1.0.0'
-    developerId = 'graviton57'
-    developerName = 'Igor Havrylyuk'
-    developerEmail = 'gavrilyuk.igor@gmail.com'
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.graviton57'
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion as Integer
     buildToolsVersion rootProject.ext.buildToolsVersion as String
@@ -45,7 +32,3 @@ android {
         testCompile "junit:junit:${rootProject.junitVersion}"
     }
 }
-//Add these lines to publish library to bintray
-//Place it at the end of the file
-apply from: 'https://raw.githubusercontent.com/graviton57/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/graviton57/JCenter/master/bintrayv1.gradle'
