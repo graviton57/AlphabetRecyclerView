@@ -18,7 +18,7 @@ repositories {
 app build.gradle
 ```groovy
 dependencies {
-   compile 'com.havrylyuk:alphabet-recyclerview:1.0.0'
+   compile 'com.github.graviton57:alphabet-recyclerview:1.0.0'
 }
 ```
 
