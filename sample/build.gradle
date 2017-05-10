@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply from: '../api.gradle'
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion as Integer
+    buildToolsVersion rootProject.ext.buildToolsVersion as String
+
+    defaultConfig {
+        applicationId "com.havrylyuk.alphabetrecyclerviewdemo"
+        minSdkVersion rootProject.ext.minSdkVersion as Integer
+        targetSdkVersion rootProject.ext.targetSdkVersion as Integer
+        versionCode rootProject.ext.versionCode as Integer
+        versionName rootProject.ext.versionName as String
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_GEONAME_URL", "\"$BASE_GEONAME_URL\""
+        buildConfigField "String", "GEONAME_API_KEY", "\"$GEONAME_API_KEY\""
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+    /*repositories {
+        maven {
+          url 'https://dl.bintray.com/graviton57/maven'
+        }
+    }*/
+
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile("com.android.support.test.espresso:espresso-core:${rootProject.espressoVersion}", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:${rootProject.supportLibsVersion}"
+    compile project(':alphabet-recyclerview')
+    //compile 'com.github.graviton57:alphabet-recycler:1.0.1'
+
+    compile "com.squareup.retrofit2:retrofit:${rootProject.retrofitVersion}"
+    compile "com.squareup.retrofit2:converter-gson:${rootProject.retrofitVersion}"
+    compile "com.squareup.okhttp3:logging-interceptor:${rootProject.okhttpVersion}"
+
+    compile "com.facebook.fresco:fresco:${rootProject.frescoVersion}"
+
+    testCompile "junit:junit:${rootProject.junitVersion}"
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--alphabetical item -->
+    <dimen name="alphabetical_item_size">64dp</dimen>
+    <dimen name="alphabetical_item_padding">2dp</dimen>
+    <dimen name="alphabetical_item_text_padding">4dp</dimen>
+
+    <!--alphabetical letter grid dialog -->
+    <dimen name="alphabetical_grid_min_width">320dp</dimen>
+    <dimen name="alphabetical_grid_padding">16dp</dimen>
+
+</resources>

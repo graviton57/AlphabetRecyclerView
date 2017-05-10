@@ -1,0 +1,5 @@
+ext {
+
+     BASE_GEONAME_URL= "http://api.geonames.org/";
+     GEONAME_API_KEY= "graviton57";
+}

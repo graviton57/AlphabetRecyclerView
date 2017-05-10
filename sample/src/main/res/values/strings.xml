@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">Alphabet RecyclerView</string>
+    <string name="something_went_wrong">Oops, something went wrong!</string>
+
+    <string name="action_en">English</string>
+    <string name="action_es">Español</string>
+    <string name="action_pt">Português</string>
+    <string name="action_ru">Русский</string>
+    <string name="action_bn">বাংলা</string>
+    <string name="action_hi">हिन्दी</string>
+    <string name="action_zh">汉语</string>
+    <string name="action_ar">العربية</string>
+    <string name="action_ja">日本語</string>
+    <string name="action_de">Deutsch</string>
+    <string name="empty_list">Empty list</string>
+
+</resources>
