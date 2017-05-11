@@ -36,6 +36,7 @@ public class StickyHeadersTouchListener implements RecyclerView.OnItemTouchListe
         this.listener = listener;
     }
 
+    @SuppressWarnings("deprecation")
     private class SingleTapDetector extends GestureDetector.SimpleOnGestureListener {
 
         private final RecyclerView parent;
@@ -61,6 +62,7 @@ public class StickyHeadersTouchListener implements RecyclerView.OnItemTouchListe
             return false;
         }
 
+        @SuppressWarnings("UnusedParameters")
         private RecyclerView.ViewHolder findItemHolderUnder(float x, float y) {
             for (int i = parent.getChildCount() - 1; i > 0; i--) {
                 View item = parent.getChildAt(i);

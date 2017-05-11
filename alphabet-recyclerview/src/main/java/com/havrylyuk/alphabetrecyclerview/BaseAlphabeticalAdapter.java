@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public abstract class BaseAlphabeticalAdapter<E> extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         implements StickyHeadersAdapter<RecyclerView.ViewHolder> {
 
@@ -18,7 +19,7 @@ public abstract class BaseAlphabeticalAdapter<E> extends RecyclerView.Adapter<Re
 
     protected OnItemClickListener listener;
     protected List<E> entityList;
-    private Context context;
+    private final Context context;
     private Set<Character> headersLetters = new TreeSet<>();
 
     public BaseAlphabeticalAdapter(Context context ) {
@@ -34,17 +35,17 @@ public abstract class BaseAlphabeticalAdapter<E> extends RecyclerView.Adapter<Re
     }
 
     protected void sortList(){
-    };
+    }
 
     protected void initHeadersLetters() {
         throw new RuntimeException("headersLetters must initialize!");
-    };
+    }
 
     public Set<Character> getHeadersLetters() {
         return headersLetters;
     }
 
-    public void setHeadersLetters(Set<Character> headersLetters) {
+    protected void setHeadersLetters(Set<Character> headersLetters) {
         this.headersLetters = headersLetters;
     }
 

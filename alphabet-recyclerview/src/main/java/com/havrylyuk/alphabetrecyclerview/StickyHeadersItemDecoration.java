@@ -11,8 +11,8 @@ public class StickyHeadersItemDecoration extends RecyclerView.ItemDecoration {
 
     private final HeaderStore headerStore;
     private final AdapterDataObserver adapterDataObserver;
-    private boolean overlay;
-    private DrawOrder drawOrder;
+    private final boolean overlay;
+    private final DrawOrder drawOrder;
 
     public StickyHeadersItemDecoration(HeaderStore headerStore) {
         this(headerStore, false);
@@ -43,6 +43,7 @@ public class StickyHeadersItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
+    @SuppressWarnings("UnusedParameters")
     private void drawHeaders(Canvas c, RecyclerView parent, RecyclerView.State state) {
         final int childCount = parent.getChildCount();
         final RecyclerView.LayoutManager lm = parent.getLayoutManager();

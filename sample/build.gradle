@@ -24,6 +24,11 @@ android {
         }
     }
 }
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -32,7 +37,7 @@ dependencies {
     })
     compile "com.android.support:appcompat-v7:${rootProject.supportLibsVersion}"
     compile project(':alphabet-recyclerview')
-    //compile 'com.github.graviton57:alphabet-recyclerview:1.0.0'// add
+    //compile 'com.github.graviton57:alphabet-recyclerview:1.0.1'// add
 
     compile "com.squareup.retrofit2:retrofit:${rootProject.retrofitVersion}"
     compile "com.squareup.retrofit2:converter-gson:${rootProject.retrofitVersion}"

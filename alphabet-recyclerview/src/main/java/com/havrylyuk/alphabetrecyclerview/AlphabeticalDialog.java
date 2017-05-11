@@ -1,5 +1,6 @@
 package com.havrylyuk.alphabetrecyclerview;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -24,6 +25,7 @@ import java.util.TreeSet;
  * Created by Igor Havrylyuk on 29.04.2017.
  */
 
+@SuppressWarnings("WeakerAccess")
 public class AlphabeticalDialog extends DialogFragment {
 
     public static final String ALPHABETICAL_DIALOG_TAG = "ALPHABETICAL_DIALOG_TAG";
@@ -38,7 +40,6 @@ public class AlphabeticalDialog extends DialogFragment {
     private int lettersColor;
 
     private RecyclerView gridRecyclerView;
-    private AlphabeticalDialogAdapter alphabeticalAdapter;
     private OnLetterClickListener onLetterClickListener = null;
     private int letter;
     private Set<Character> listLetters;
@@ -76,12 +77,12 @@ public class AlphabeticalDialog extends DialogFragment {
             listLetters = (SortedSet<Character>) arguments.getSerializable(EXTRA_LIST_LETTERS);
         }
     }
-
+    @SuppressLint("InflateParams")
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog builder = new Dialog(getActivity());
-        View view = getActivity().getLayoutInflater().inflate(R.layout.widget_grid_dialog, null);
+         View view = getActivity().getLayoutInflater().inflate(R.layout.widget_grid_dialog, null);
         initializeRecyclerView(view);
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
         builder.setContentView(view);
@@ -103,16 +104,16 @@ public class AlphabeticalDialog extends DialogFragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), spanCount);
         gridRecyclerView.setLayoutManager(gridLayoutManager);
         gridRecyclerView.setHasFixedSize(true);
-        alphabeticalAdapter = new AlphabeticalDialogAdapter(getActivity(),
+        AlphabeticalDialogAdapter alphabeticalAdapter = new AlphabeticalDialogAdapter(getActivity(),
                 new AlphabeticalDialogAdapter.OnLetterClickListener() {
-            @Override
-            public void onLetterClick(Character character) {
-                if (null != onLetterClickListener) {
-                    onLetterClickListener.onLetterClick(character);
-                    dismiss();
-                }
-            }
-        });
+                    @Override
+                    public void onLetterClick(Character character) {
+                        if (null != onLetterClickListener) {
+                            onLetterClickListener.onLetterClick(character);
+                            dismiss();
+                        }
+                    }
+                });
         alphabeticalAdapter.setLetters(listLetters);
         alphabeticalAdapter.setTilesColor(tilesColor);
         alphabeticalAdapter.setLettersColor(lettersColor);

@@ -33,7 +33,7 @@ android {
     publish {
         groupId = 'com.github.graviton57'
         artifactId = 'alphabet-recyclerview'
-        publishVersion = '1.0.0'
+        publishVersion = '1.0.1'
         desc = 'Alphabetical Sticky Headers RecyclerView library.'
         licences = ['Apache-2.0']
         website = 'https://github.com/graviton57/AlphabetRecyclerView'

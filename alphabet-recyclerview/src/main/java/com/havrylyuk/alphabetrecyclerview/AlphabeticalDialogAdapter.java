@@ -22,7 +22,7 @@ public class AlphabeticalDialogAdapter extends RecyclerView.Adapter<Alphabetical
         void onLetterClick(Character character);
     }
 
-    private Context context;
+    private final Context context;
     private List<Character> letters;
     private OnLetterClickListener listener = null;
     private int tileColor;
@@ -59,6 +59,7 @@ public class AlphabeticalDialogAdapter extends RecyclerView.Adapter<Alphabetical
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onBindViewHolder(LetterItemHolder holder, int position) {
         final char letter = letters.get(position);
@@ -89,7 +90,7 @@ public class AlphabeticalDialogAdapter extends RecyclerView.Adapter<Alphabetical
 
     public final class LetterItemHolder extends RecyclerView.ViewHolder {
 
-      public TextView letter;
+      public final TextView letter;
 
       public LetterItemHolder(View itemView) {
           super(itemView);

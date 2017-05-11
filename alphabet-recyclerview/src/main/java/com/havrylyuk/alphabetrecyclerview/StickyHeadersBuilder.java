@@ -3,6 +3,7 @@ package com.havrylyuk.alphabetrecyclerview;
 import android.support.v7.widget.RecyclerView;
 
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 public class StickyHeadersBuilder {
 
     private RecyclerView recyclerView;
@@ -30,10 +31,12 @@ public class StickyHeadersBuilder {
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
     public StickyHeadersBuilder setStickyHeadersAdapter(StickyHeadersAdapter adapter) {
         return setStickyHeadersAdapter(adapter, false);
     }
 
+    @SuppressWarnings("SameParameterValue")
     public StickyHeadersBuilder setStickyHeadersAdapter(StickyHeadersAdapter adapter, boolean overlay) {
         this.headersAdapter = adapter;
         this.overlay = overlay;

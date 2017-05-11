@@ -8,6 +8,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 
+@SuppressWarnings("deprecation")
 public class HeaderStore {
 
     private final RecyclerView parent;
@@ -28,7 +29,7 @@ public class HeaderStore {
         this.headersHeightsByItemsIds = new LongSparseArray<>();
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked"})
     public View getHeaderViewByItem(RecyclerView.ViewHolder itemHolder) {
         int itemPosition = RecyclerViewHelper
                 .convertPreLayoutPositionToPostLayout(parent, itemHolder.getPosition());
@@ -118,6 +119,7 @@ public class HeaderStore {
         }
     }
 
+    @SuppressWarnings("UnusedParameters")
     public void onItemRangeMoved(int fromPosition, int toPosition, int itemCount) {
         headersViewByHeadersIds.clear();
         int min = Math.min(fromPosition, toPosition);
