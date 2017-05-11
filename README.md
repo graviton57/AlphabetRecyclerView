@@ -8,19 +8,11 @@ AlphabetRecyclerView is an Android library created to be able to use RecyclerVie
 ## Usage
 
 ### Setup
-root build.gradle
-```groovy
-allprojects {
-    repositories {
-        jcenter()
-        maven { url "https://jitpack.io" }
-    }
-}
-```
-app build.gradle
+
+Add in build.gradle
 ```groovy
   dependencies {
-    	compile 'com.github.graviton57:AlphabetRecyclerView:1.0'
+    	compile 'com.github.graviton57:alphabet-recyclerview:1.0.0'
 }
 ```
 
