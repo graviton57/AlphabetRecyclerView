@@ -1,7 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
-group='com.github.graviton57'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion as Integer
@@ -30,5 +28,14 @@ android {
         compile "com.android.support:appcompat-v7:${rootProject.supportLibsVersion}"
         compile "com.android.support:recyclerview-v7:${rootProject.supportLibsVersion}"
         testCompile "junit:junit:${rootProject.junitVersion}"
+    }
+
+    publish {
+        groupId = 'com.github.graviton57'
+        artifactId = 'alphabet-recyclerview'
+        publishVersion = '1.0.0'
+        desc = 'Alphabetical Sticky Headers RecyclerView library.'
+        licences = ['Apache-2.0']
+        website = 'https://github.com/graviton57/AlphabetRecyclerView'
     }
 }
